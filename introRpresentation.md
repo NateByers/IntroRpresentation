@@ -148,6 +148,61 @@ F-statistic: 20.1 on 1 and 3 DF,  p-value: 0.0207
 ```
 
 
+Regression
+=========================================================
+Let's see what this regression looks like as a line on our plot
+
+```r
+plot(carat, price)
+abline(fit)
+```
+
+
+![plot of chunk unnamed-chunk-9](introRpresentation-figure/unnamed-chunk-9.png) 
+
+
+Regression
+========================================================
+- Looking at the graph, we might think a quadratic model would work better
+- This just means that we add squared values of the `carat` variable
+
+```r
+carat2 <- carat^2
+fit2 <- lm(price ~ carat + carat2)
+summary(fit2)
+```
+
+
+Regression (quadratic output)
+=========================================================
+
+```
+
+Call:
+lm(formula = price ~ carat + carat2)
+
+Residuals:
+     1      2      3      4      5 
+-437.4  596.0   20.2 -280.4  101.6 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)     1169       1877    0.62     0.60
+carat          -8375       9502   -0.88     0.47
+carat2         22616      11120    2.03     0.18
+
+Residual standard error: 564 on 2 degrees of freedom
+Multiple R-squared:  0.958,	Adjusted R-squared:  0.915 
+F-statistic: 22.6 on 2 and 2 DF,  p-value: 0.0424
+```
+
+
+Plot (quadratic)
+=========================================================
+
+![plot of chunk unnamed-chunk-12](introRpresentation-figure/unnamed-chunk-12.png) 
+
+
 Web scraping
 =========================================================
 

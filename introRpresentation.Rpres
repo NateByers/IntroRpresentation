@@ -104,6 +104,47 @@ fit <- lm(price ~ carat)
 summary(fit)
 ```
 
+Regression
+=========================================================
+Let's see what this regression looks like as a line on our plot
+```{r, eval=FALSE}
+plot(carat, price)
+abline(fit)
+```
+
+```{r, echo=FALSE}
+plot(carat, price, cex.axis = 2, cex.lab = 2, cex = 2)
+abline(fit)
+```
+
+Regression
+========================================================
+- Looking at the graph, we might think a quadratic model would work better
+- This just means that we add squared values of the `carat` variable
+```{r, eval=FALSE}
+carat2 <- carat^2
+fit2 <- lm(price ~ carat + carat2)
+summary(fit2)
+```
+
+Regression (quadratic output)
+=========================================================
+```{r, echo=FALSE}
+carat2 <- carat^2
+fit2 <- lm(price ~ carat + carat2)
+summary(fit2)
+```
+
+Plot (quadratic)
+=========================================================
+
+```{r, echo=FALSE}
+carat.values <- seq(0.2, 0.7, 0.001)
+predict.price <- predict(fit2, list(carat = carat.values, carat2 = carat.values^2))
+plot(carat, price, cex.axis = 2, cex.lab = 2, cex = 2)
+lines(carat.values, predict.price)
+```
+
 Web scraping
 =========================================================
 
