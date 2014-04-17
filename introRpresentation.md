@@ -230,5 +230,6 @@ Resources for learning R
 
 Part 2
 ======================================================
-- Part 2 of this series can be found here: [rpubs.com/NateByers/introR2](http://rpubs.com/NateByers/introR2)
-- The code for this presentation can be found here: 
+- Part 2 of this series can be found here:<a href="http://rpubs.com/NateByers/introR2" target="_blank"> rpubs.com/NateByers/introR2</a> 
+- These presentations were created using RStudio's ["R Presentations"](http://www.rstudio.com/ide/docs/presentations/overview?version=0.98.501&mode=desktop)
+- The code for this presentation can be found here: [github.com/NateByers/IntroRpresentation/tree/master](https://github.com/NateByers/IntroRpresentation/tree/master)
