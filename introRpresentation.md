@@ -200,36 +200,31 @@ Combining R with other tools
 ========================================================
 
 - R is a high level language, so it's easier to use but sometimes slow
-- The [Rcpp package][rccp] enables you to write code in C++ for speedy processing and integrate that code with R
+- The <a href="http://dirk.eddelbuettel.com/code/rcpp.html" target="_blank">Rcpp package</a> enables you to write code in C++ for speedy processing and integrate that code with R
 
-[rccp]: http://dirk.eddelbuettel.com/code/rcpp.html
 
 Combining R with other tools
 ========================================================
 
-- R can also [connect to databases][database] and work with data files from [other stats programs][stats]
-- It can also be used with [Hadoop][hadoop] for big data analytics
+- R can also <a href="http://www.statmethods.net/input/dbinterface.html" target="_blank">connect to databases</a>
+- And work with data files from <a href="http://cran.r-project.org/doc/manuals/r-devel/R-data.html#Importing-from-other-statistical-systems" target="_blank">other stats programs</a>
+- It can also be used with <a href="http://blog.revolutionanalytics.com/2011/09/mapreduce-hadoop-r.html" target="_blank">Hadoop</a> for big data analytics
 
-[database]: http://www.statmethods.net/input/dbinterface.html
-[stats]: http://cran.r-project.org/doc/manuals/r-devel/R-data.html#Importing-from-other-statistical-systems
-[hadoop]: http://blog.revolutionanalytics.com/2011/09/mapreduce-hadoop-r.html
 
 Resources for learning R
 ========================================================
 
-- UCLA has a great [website][ucla] for learning R and statistics
-- There are [many][zuur] - [good][dalgaard] - [books][knell] as well
-- And remember, R can be freely [downloaded][r] and works on most operating systems
+- UCLA has a great <a href="http://www.ats.ucla.edu/stat/r/" target="_blank">website</a> for learning R and statistics
+- There are many good books as well, such as
+ - <a href="http://www.amazon.com/Beginners-Guide-Use-Alain-Zuur/dp/0387938362/ref=sr_1_1?ie=UTF8&qid=1397750360&sr=8-1&keywords=beginner%27s+guide+to+R" target="_blank">Zuur et al.'s</a>
+ - <a href="http://www.amazon.com/Introductory-Statistics-R-Computing/dp/0387790535/ref=sr_1_1?ie=UTF8&qid=1397750420&sr=8-1&keywords=introductory+statistics+R" target="_blank">Dalgaard's</a>
+ - and <a href="http://www.amazon.com/Introductory-Beginners-Guide-Visualisation-Analysis-ebook/dp/B00BU34QTM/ref=sr_1_1?ie=UTF8&qid=1397750458&sr=8-1&keywords=introductory+R" target="_blank">Knell's</a>
+- And remember, R can be freely <a href="http://www.r-project.org/" target="_blank">downloaded</a> and works on most operating systems
 
-
-[ucla]: http://www.ats.ucla.edu/stat/r/
-[zuur]: http://www.springer.com/statistics/computational+statistics/book/978-0-387-93836-3
-[dalgaard]: http://www.springer.com/statistics/computational+statistics/book/978-0-387-79053-4
-[knell]: http://www.introductoryr.co.uk/
-[r]: http://www.r-project.org/
 
 Part 2
 ======================================================
-- Part 2 of this series can be found here:<a href="http://rpubs.com/NateByers/introR2" target="_blank"> rpubs.com/NateByers/introR2</a> 
-- These presentations were created using RStudio's ["R Presentations"](http://www.rstudio.com/ide/docs/presentations/overview?version=0.98.501&mode=desktop)
-- The code for this presentation can be found here: [github.com/NateByers/IntroRpresentation/tree/master](https://github.com/NateByers/IntroRpresentation/tree/master)
+- Part 2 of this series can be found here: <a href="http://rpubs.com/NateByers/introR2" target="_blank"> rpubs.com/NateByers/introR2</a> 
+- These presentations were created using RStudio's <a href="http://www.rstudio.com/ide/docs/presentations/overview?version=0.98.501&mode=desktop" target="_blank">"R Presentations"</a>
+- RStudio can also be freely <a href="http://www.rstudio.com/" target="_blank">downloaded</a>
+- The code for this presentation can be found here:<a href="https://github.com/NateByers/IntroRpresentation/tree/master" target="_blank"> github.com/NateByers/IntroRpresentation/tree/master</a>
