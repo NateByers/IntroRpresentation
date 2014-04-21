@@ -160,7 +160,6 @@ Regression
 Let's see what this regression looks like as a line on our plot
 
 ```r
-plot(carat, price)
 abline(fit)
 ```
 
@@ -242,18 +241,12 @@ prediction
 Regression (prediction plot)
 ========================================================
 - Let's plot the prediction on the quadratic graph
-- Again, don't worry if you don't understand how we plot the curve
-- We use the `points()` function to plot our prediction
 
 ```r
-plot(carat, price)
-lines(carat.values, curve.price)
 points(x = 0.5, y = prediction, col = "red")
 ```
 
 
-Regression (prediction plot)
-========================================================
 ![plot of chunk unnamed-chunk-16](introRpresentation-figure/unnamed-chunk-16.png) 
 
 
