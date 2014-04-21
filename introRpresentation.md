@@ -7,14 +7,17 @@ Topics
 ========================================================
 
 - R basics
-- Doing a simple regression
+- Regression
 - Web scraping
-- Brief discussion of using R with other languages/programs
+- Using R with other tools
+
+R basics
+========================================================
+type: section
 
 What is R?
 ========================================================
-#incremental: true
-- R is a free, open-source language and environment for statistical analysis
+- R is a <a href="http://www.r-project.org/" target="_blank">free, open-source language and environment</a> for statistical analysis
 - It's been very popular in academia for more than a decade
 - R is becoming more popular in industry, <a href="http://www.kdnuggets.com/2013/06/kdnuggets-annual-software-poll-rapidminer-r-vie-for-first-place.html" target="_blank"> particularly for data mining</a>
 
@@ -22,7 +25,7 @@ Starting Up R
 ========================================================
 We'll be opening up an R session through IUanyWARE:  
 
-1. In Go to <a href="https://iuanyware.iu.edu" target="_blank"> iuanyware.iu.edu</a> and sign in
+1. Go to <a href="https://iuanyware.iu.edu" target="_blank"> iuanyware.iu.edu</a> and sign in
 2. Go to the Analysis & Modeling folder
 3. Open RStudio (say no to the update request)
 
@@ -31,7 +34,7 @@ Doing math
 ========================================================
 
 - Open up a script by going to File -> New File -> R Script 
-- It will be the top left panel in RStudio
+- It will open in the top left panel in RStudio
 - Try some math
 
 
@@ -112,6 +115,10 @@ Plotting
 
 Regression
 ========================================================
+type: section
+
+Regression
+========================================================
 We use the `lm(y ~ x)` function in R to fit 
 a linear regression model and the `summary( )`
 function to see the results
@@ -164,7 +171,7 @@ abline(fit)
 Regression
 ========================================================
 - Looking at the graph, we might think a quadratic model would work better
-- This just means that we add squared values of the `carat` variable
+- This just means that we add squared values of the `carat` variable to our regression equation
 
 ```r
 carat2 <- carat^2
@@ -197,11 +204,62 @@ F-statistic: 22.6 on 2 and 2 DF,  p-value: 0.0424
 ```
 
 
-Plot (quadratic)
+Regression (quadratic plot)
+=========================================================
+- Unfortunately, plotting the quadratic curve on the line isn't that simple in R
+- Here's the code, but don't worry if you don't understand what's going on
+
+```r
+carat.values <- seq(0.2, 0.7, 0.001)
+curve.price <- predict(fit2, list(carat = carat.values, carat2 = carat.values^2))
+plot(x = carat, y = price)
+lines(carat.values, curve.price)
+```
+
+
+Regression (quadratic plot)
 =========================================================
 
-![plot of chunk unnamed-chunk-12](introRpresentation-figure/unnamed-chunk-12.png) 
+![plot of chunk unnamed-chunk-13](introRpresentation-figure/unnamed-chunk-13.png) 
 
+
+Regression (prediction)
+=========================================================
+- Based on this small data set and the quadratic model, how much would we expect to spend if we wanted a half-carat diamond
+- To find out, we use the `predict()` function 
+
+```r
+prediction <- predict(fit2, list(carat = 0.5, carat2 = 0.5^2))
+prediction
+```
+
+```
+   1 
+2635 
+```
+
+
+Regression (prediction plot)
+========================================================
+- Let's plot the prediction on the quadratic graph
+- Again, don't worry if you don't understand how we plot the curve
+- We use the `points()` function to plot our prediction
+
+```r
+plot(carat, price)
+lines(carat.values, curve.price)
+points(x = 0.5, y = prediction, col = "red")
+```
+
+
+Regression (prediction plot)
+========================================================
+![plot of chunk unnamed-chunk-16](introRpresentation-figure/unnamed-chunk-16.png) 
+
+
+Web scraping
+========================================================
+type: section
 
 Web scraping
 =========================================================
@@ -251,19 +309,23 @@ R packages
 - However, anyone can write functions for R and make it available to other R users in a package
 - Packages must be installed first (the `install.packages()` function) then loaded before using it (the `library()` function)
 
-Combining R with other tools
+Using R with other tools
+=======================================================
+type: section
+
+Using R with other tools
+========================================================
+
+- R can 
+ - import data files from <a href="http://cran.r-project.org/doc/manuals/r-devel/R-data.html#Importing-from-other-statistical-systems" target="_blank">other stats programs</a>
+ - <a href="http://www.statmethods.net/input/dbinterface.html" target="_blank">connect to databases</a>
+ - and it can also be used with <a href="http://www.rdatamining.com/tutorials/rhadoop" target="_blank">Hadoop</a> for big data analytics
+
+Using R with other tools
 ========================================================
 
 - R is a high level language, so it's easier to use but sometimes slow
 - The <a href="http://dirk.eddelbuettel.com/code/rcpp.html" target="_blank">Rcpp package</a> enables you to write code in C++ for speedy processing and integrate that code with R
-
-
-Combining R with other tools
-========================================================
-
-- R can also <a href="http://www.statmethods.net/input/dbinterface.html" target="_blank">connect to databases</a>
-- And work with data files from <a href="http://cran.r-project.org/doc/manuals/r-devel/R-data.html#Importing-from-other-statistical-systems" target="_blank">other stats programs</a>
-- It can also be used with <a href="http://blog.revolutionanalytics.com/2011/09/mapreduce-hadoop-r.html" target="_blank">Hadoop</a> for big data analytics
 
 
 Resources for learning R
@@ -277,9 +339,10 @@ Resources for learning R
 - And remember, R can be freely <a href="http://www.r-project.org/" target="_blank">downloaded</a> and works on most operating systems
 
 
-Part 2
+Parts 2 and 3
 ======================================================
 - Part 2 of this series can be found here: <a href="http://rpubs.com/NateByers/introR2" target="_blank"> rpubs.com/NateByers/introR2</a> 
+- Part 3 can be found here: <a href="http://rpubs.com/NateByers/introR3" target="_blank"> rpubs.com/NateByers/introR3</a>
 - These presentations were created using RStudio's <a href="http://www.rstudio.com/ide/docs/presentations/overview?version=0.98.501&mode=desktop" target="_blank">"R Presentations"</a>
 - RStudio can also be freely <a href="http://www.rstudio.com/" target="_blank">downloaded</a>
 - The code for this presentation can be found here:<a href="https://github.com/NateByers/IntroRpresentation/tree/master" target="_blank"> github.com/NateByers/IntroRpresentation/tree/master</a>
